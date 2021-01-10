@@ -1,0 +1,77 @@
+.dropdown {
+  &__block{
+    position: relative;
+  }
+  &__arrow {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.11973 9.29006L11.9997 13.1701L15.8797 9.29006C16.2697 8.90006 16.8997 8.90006 17.2897 9.29006C17.6797 9.68006 17.6797 10.3101 17.2897 10.7001L12.6997 15.2901C12.3097 15.6801 11.6797 15.6801 11.2897 15.2901L6.69973 10.7001C6.30973 10.3101 6.30973 9.68006 6.69973 9.29006C7.08973 8.91006 7.72973 8.90006 8.11973 9.29006Z' fill='%23B7BFC6'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    margin-left: 10px;
+    display: block;
+    margin-top: 9px;
+  }
+  &__content{
+    position: absolute;
+    background: #ffffff;
+    box-sizing: border-box;
+    box-shadow: 0 6px 20px rgba(1, 32, 40, 0.06);
+    border-radius: 4px;
+    top: 48px;
+    right: 0;
+    width: 200px;
+    z-index: 2;
+    transition: opacity 0.6s 0s;
+    padding: 12px 0;
+    border: 1px solid #e6ecf2;
+  }
+  
+  &__block {
+    display: inline-block;
+    position: relative;
+
+    &._open {
+      .dropdown__content {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__button {
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+  }
+
+
+}
+
+&__dotted {
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='8' r='2' fill='%23B7BFC6'/%3E%3Ccircle cx='8' cy='8' r='2' fill='%23B7BFC6'/%3E%3Ccircle cx='14' cy='8' r='2' fill='%23B7BFC6'/%3E%3C/svg%3E%0A");
+}
+
+/** SLIDEDOWN **/
+.slide-down-enter,
+.slide-down-leave-to {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.slide-down-enter-to,
+.slide-down-leave {
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition: max-height .5s linear;
+}
+
+.slide-enter, .slide-leave-active {
+  right: -100%;
+}
